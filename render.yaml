@@ -3,4 +3,4 @@ services:
     name: messenger-app
     env: python
     buildCommand: ""
-    startCommand: "python app.py"
+    startCommand: gunicorn -k eventlet -w 1 app:app
