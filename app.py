@@ -12,6 +12,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 db = SQLAlchemy(app)
 socketio = SocketIO(app)
 
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
+
 from models import db  # если база определена в models.py
 
 with app.app_context():
