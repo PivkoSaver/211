@@ -22,6 +22,10 @@ with app.app_context():
 with app.app_context():
     db.create_all()
 
+with app.app_context():
+    db.init_app(app)
+    db.create_all()
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
